@@ -50,7 +50,7 @@ const CoinInfo = ({ coin }) => {
     try {
       setLoading(true);
       const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
-      setHistoricData(data.prices || []); // ✅ Handle empty responses
+      setHistoricData(data.prices || []); 
     } catch (error) {
       console.error("Error fetching historical data:", error);
     } finally {
@@ -92,7 +92,7 @@ const CoinInfo = ({ coin }) => {
                       data: historicData.map((coin) => coin[1]),
                       label: `Price ( Past ${days} Days ) in ${currency}`,
                       borderColor: "#EEBC1D",
-                      tension: 0.1, // ✅ Smooth Line
+                      tension: 0.1, 
                     },
                   ],
                 }}
