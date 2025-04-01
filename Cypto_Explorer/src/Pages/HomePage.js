@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material"; // Import Box from MUI
+import { Box } from "@mui/material"; 
 import Banner from "../components/Banner/Banner";
 import CoinsTable from "../components/CoinsTable";
 
