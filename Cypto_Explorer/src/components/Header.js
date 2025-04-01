@@ -9,9 +9,8 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { styled } from "@mui/system";
 import { useNavigate } from "react-router-dom";
-import { useCrypto } from "../CryptoContext"; // ✅ Fixed Import
+import { useCrypto } from "../CryptoContext"; 
 
-// Styled Components
 const Title = styled(Typography)({
   flex: 1,
   color: "gold",
@@ -20,7 +19,6 @@ const Title = styled(Typography)({
   cursor: "pointer",
 });
 
-// Theme Configuration
 const darkTheme = createTheme({
   palette: {
     mode: "dark", 
@@ -29,7 +27,7 @@ const darkTheme = createTheme({
 });
 
 function Header() {
-  const { currency, setCurrency } = useCrypto(); // ✅ Hook inside function
+  const { currency, setCurrency } = useCrypto(); 
   const navigate = useNavigate(); 
 
   return (
