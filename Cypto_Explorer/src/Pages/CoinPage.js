@@ -1,13 +1,13 @@
 import { LinearProgress, Typography, Box } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // ✅ Correct import
+import { useParams } from "react-router-dom"; 
 import parse from "html-react-parser";
 import CoinInfo from "../components/CoinInfo";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "../components/CoinsTable";
 import { styled } from "@mui/system";
-import { useCrypto } from "../CryptoContext"; // ✅ Correct import
+import { useCrypto } from "../CryptoContext"; 
 
 // Styled Components
 const Container = styled(Box)(({ theme }) => ({
@@ -49,10 +49,10 @@ const MarketData = styled(Box)(({ theme }) => ({
 }));
 
 const CoinPage = () => {
-  const { id } = useParams(); // ✅ Correct use of useParams
+  const { id } = useParams();
   const [coin, setCoin] = useState(null);
-  const [loading, setLoading] = useState(true); // ✅ Added Loading State
-  const { currency, symbol } = useCrypto(); // ✅ Corrected CryptoState to useCrypto
+  const [loading, setLoading] = useState(true);
+  const { currency, symbol } = useCrypto(); 
 
   const fetchCoin = async () => {
     try {
@@ -60,7 +60,7 @@ const CoinPage = () => {
       const url = SingleCoin(id);
       console.log("Fetching Coin Data from:", url);
       const { data } = await axios.get(url, {
-        headers: { "Access-Control-Allow-Origin": "*" }, // ✅ Fix CORS issue
+        headers: { "Access-Control-Allow-Origin": "*" }, 
       });
       setCoin(data);
     } catch (error) {
@@ -73,7 +73,7 @@ const CoinPage = () => {
 
   useEffect(() => {
     fetchCoin();
-  }, [id]); // ✅ Refetch if ID changes
+  }, [id]); 
 
   if (loading) return <LinearProgress sx={{ backgroundColor: "gold" }} />;
 
