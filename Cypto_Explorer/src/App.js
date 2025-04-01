@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import { CryptoProvider } from "./CryptoContext";
 import "./App.css";
 
-// Styled Components
+
 const AppContainer = styled("div")({
   backgroundColor: "#14161a",
   color: "white",
@@ -16,7 +16,7 @@ const AppContainer = styled("div")({
 function App() {
   return (
     <CryptoProvider>
-      <BrowserRouter> {/* FIXED - Use BrowserRouter directly */}
+      <BrowserRouter> 
         <AppContainer>
           <Header />
           <Routes>
